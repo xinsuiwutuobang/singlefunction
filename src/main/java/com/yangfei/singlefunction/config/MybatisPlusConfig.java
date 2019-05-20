@@ -7,7 +7,7 @@ import org.springframework.context.annotation.Configuration;
 
 /**
  * <p>
- *
+ *  mybatis-plus 配置类
  * </p>
  *
  * @author yangfei
