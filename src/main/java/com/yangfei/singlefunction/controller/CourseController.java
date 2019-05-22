@@ -14,6 +14,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.Random;
+
 /**
  * <p>
  *  前端控制器
@@ -52,6 +54,22 @@ public class CourseController {
         Page<Course> page = new Page<>(current, size);
         IPage<Course> ret = iCourseService.page(page, new LambdaQueryWrapper<Course>().orderByDesc(Course::getCid));
         return ret;
+    }
+
+    @RequestMapping("/insert")
+    public Object insert() {
+        Course course = new Course();
+        Random random = new Random(100000);
+        course.setCname("course" + random.nextLong());
+        course.setTid(1L);
+        return iCourseService.save(course);
+    }
+
+    @RequestMapping("/test1")
+    public Object testqw() {
+        LambdaQueryWrapper<Course> lqw =new LambdaQueryWrapper<Course>();
+        QueryWrapper<Course> qw = new QueryWrapper<Course>();
+        return null;
     }
 }
 
