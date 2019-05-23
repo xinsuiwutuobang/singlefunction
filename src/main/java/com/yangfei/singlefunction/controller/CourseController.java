@@ -71,5 +71,9 @@ public class CourseController {
         QueryWrapper<Course> qw = new QueryWrapper<Course>();
         return null;
     }
+
+    public static void main(String[] args) {
+
+    }
 }
 
