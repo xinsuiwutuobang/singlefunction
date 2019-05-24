@@ -2,4 +2,16 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.yangfei.singlefunction.mapper.ScMapper">
 
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.yangfei.singlefunction.entity.Sc">
+        <result column="Sid" property="Sid" />
+        <result column="Cid" property="Cid" />
+        <result column="score" property="score" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        Sid, Cid, score
+    </sql>
+
 </mapper>

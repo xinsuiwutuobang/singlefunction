@@ -2,4 +2,15 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.yangfei.singlefunction.mapper.TeacherMapper">
 
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.yangfei.singlefunction.entity.Teacher">
+        <id column="Tid" property="Tid" />
+        <result column="Tname" property="Tname" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        Tid, Tname
+    </sql>
+
 </mapper>

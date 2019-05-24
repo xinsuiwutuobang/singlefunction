@@ -15,6 +15,7 @@ import org.apache.ibatis.annotations.Param;
  * @since 2019-05-18
  */
 public interface CourseMapper extends BaseMapper<Course> {
+
     Course selectByFirst();
 
     IPage<Course> selectCoursePage(Page page, @Param("name") String name);

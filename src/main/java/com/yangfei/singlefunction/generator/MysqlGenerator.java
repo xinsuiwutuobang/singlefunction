@@ -50,10 +50,14 @@ public class MysqlGenerator {
 
         // 全局配置
         GlobalConfig gc = new GlobalConfig();
-        String projectPath = System.getProperty("user.dir");
-        gc.setOutputDir(projectPath + "/src/main/java");
+        /*String projectPath = System.getProperty("user.dir");
+        gc.setOutputDir(projectPath + "/src/main/java");*/
+        //后期修改，采用输出D盘根目录的默认位置
+        String projectPath = gc.getOutputDir();
         gc.setAuthor("yangfei");
         gc.setOpen(false);
+        gc.setBaseColumnList(true);
+        gc.setBaseResultMap(true);
         mpg.setGlobalConfig(gc);
 
         // 数据源配置
