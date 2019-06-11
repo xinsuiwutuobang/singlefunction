@@ -16,11 +16,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
-import java.util.Vector;
+import java.util.*;
 import java.util.function.Function;
+import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.LongStream;
 
@@ -40,6 +38,13 @@ public class CourseController {
     @RequestMapping("/test")
     public Object test(){
         int count = iCourseService.count();
+        QueryWrapper<Course> qw = new QueryWrapper<>();
+        if (true) {
+            qw.eq("age", "xiaoming");
+        }
+        qw.orderByAsc("create_time");
+        List<Course> list = iCourseService.list(new QueryWrapper<Course>().lambda().eq(Course::getCname, "A").eq(Course::getTid, 2L).or().or().eq(Course::getCname, "A").eq(Course::getTid, 2L));
+
         return count;
     }
 
@@ -60,7 +65,7 @@ public class CourseController {
     @RequestMapping("/coursePage")
     public Object coursePage(Integer current, Integer size) {
         Page<Course> page = new Page<>(current, size);
-        IPage<Course> ret = iCourseService.page(page, new LambdaQueryWrapper<Course>().orderByDesc(Course::getCid));
+        IPage<Course> ret = iCourseService.page(page, new LambdaQueryWrapper<Course>().eq(Course::getCname,"xiaoming").orderByDesc(Course::getCid));
         return ret;
     }
 

@@ -10,7 +10,7 @@ import java.util.Arrays;
 @Slf4j
 public class ArithmeticUtils {
     public static void main(String[] args) {
-        testBobbleSort();
+        insertTest();
     }
 
     /**
@@ -73,14 +73,47 @@ public class ArithmeticUtils {
     }
 
     public static void testBobbleSort() {
-        int[] array = {1, 12, 3, 14, 5, 16};
+        int[] array = {5,4,3,2,1};
         int[] jdk = array.clone();
         log.info(String.format("排序前：%s",Arrays.toString(array)));
         bobbleSort(array,array.length);
         log.info(String.format("排序后：%s",Arrays.toString(array)));
 
-        log.info(String.format("jdk排序前：%s",Arrays.toString(array)));
+        log.info(String.format("jdk排序前：%s",Arrays.toString(jdk)));
         Arrays.sort(jdk);
-        log.info(String.format("jdk排序后：%s",Arrays.toString(array)));
+        log.info(String.format("jdk排序后：%s",Arrays.toString(jdk)));
+    }
+
+    /**
+     * 插入排序
+     * 通过构建有序序列，对于未排序数据，在已排序序列中从后向前扫描，找到相应的位置并插入。
+     * 插入排序非常类似于整扑克牌。在开始摸牌时，左手是空的，牌面朝下放在桌上。接着，一次从
+     * 桌上摸起一张牌，并将它插入到左手一把牌中的正确位置上。为了找到这张牌的正确位置，要将
+     * 它与手中已有的牌从右到左地进行比较。无论什么时候，左手中的牌都是排好序的。
+     * 如果输入数组已经是排好序的话，插入排序出现最佳情况，其运行时间是输入规模的一个线性函
+     * 数。如果输入数组是逆序排列的，将出现最坏情况。平均情况与最坏情况一样，其时间代价是(n2)。
+     * @param array
+     */
+    public static void insertSort(int[] array) {
+        for (int i = 1; i < array.length; i++) {
+            //插入的值
+            int insertValue = array[i];
+            //被插入的位置
+            int index = i - 1;
+            //如果插入的值比数组从后向前方向插入的位置前的数小，
+            while (index >= 0 && insertValue < array[index]) {
+                //array index 向后移动
+                array[index + 1] = array[index];
+                //index 向前移动
+                index --;
+            }
+            //插入的值放入合适位置，前边做了index -- 找到合适的位置，所以这里直接index + 1
+            array[index + 1] = insertValue;
+        }
+    }
+    public static void insertTest() {
+        int[] array = {5,4,3,2,1};
+        insertSort(array);
+        log.info(String.format("排序后：%s",Arrays.toString(array)));
     }
 }

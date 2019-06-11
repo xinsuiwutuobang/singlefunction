@@ -83,7 +83,7 @@ public class UserServiceTest {
         assertThat(user.getName()).isEqualTo("mp");
 
         mapper.update(
-                new User().setEmail("miemie@baomidou.com"),
+                new User().setEmail("miemie@baomidou.com").setAge(null),
                 new QueryWrapper<User>()
                         .lambda().eq(User::getId, 2)
         );
@@ -112,7 +112,7 @@ public class UserServiceTest {
         assertThat(user.getName()).isEqualTo("miemie");
         assertThat(user.getAge()).isEqualTo(3);
 
-        mapper.selectList(Wrappers.<User>lambdaQuery().select(User::getId))
+        mapper.selectList(Wrappers.<User>lambdaQuery().select(User::getId,User::getAge))
                 .forEach(x -> {
                     assertThat(x.getId()).isNotNull();
                     assertThat(x.getEmail()).isNull();

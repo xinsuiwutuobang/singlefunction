@@ -2,16 +2,4 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.yangfei.singlefunction.mapper.CourseMapper">
 
-    <!-- 通用查询映射结果 -->
-    <resultMap id="BaseResultMap" type="com.yangfei.singlefunction.entity.Course">
-        <id column="Cid" property="Cid" />
-        <result column="Cname" property="Cname" />
-        <result column="Tid" property="Tid" />
-    </resultMap>
-
-    <!-- 通用查询结果列 -->
-    <sql id="Base_Column_List">
-        Cid, Cname, Tid
-    </sql>
-
 </mapper>

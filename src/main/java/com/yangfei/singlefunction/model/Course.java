@@ -1,12 +1,12 @@
-package com.yangfei.singlefunction.entity;
+package com.yangfei.singlefunction.model;
 
-import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableField;
-import java.io.Serializable;
+import com.baomidou.mybatisplus.annotation.TableId;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
-import lombok.extern.slf4j.Slf4j;
+
+import java.io.Serializable;
 
 /**
  * <p>
@@ -22,6 +22,7 @@ import lombok.extern.slf4j.Slf4j;
 public class Course implements Serializable {
 
 private static final long serialVersionUID=1L;
+
     /**
      * 课程编号
      */
