@@ -30,6 +30,6 @@ public class BaseTest {
 
     }
 
-    int[] baseArray = {8, 2, 5, 7, 6, 3, 4, 1, 0};
+    int[] baseArray = {8, 2, 5, 7, 6, 9,3, 4, 1, 0};
 
 }

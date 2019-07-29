@@ -35,3 +35,11 @@ mybatis-plus:
   global-config:
     db-config:
       id-type: auto
+
+base:
+  admin:
+    name: 365
+    sex: 1
+    age: 29
+    phone: 15001288888
+
