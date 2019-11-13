@@ -42,4 +42,13 @@ private static final long serialVersionUID=1L;
     private Long Tid;
 
 
+    public static void main(String[] args) {
+        String aa = "fjiapfjafjoiasjfio32i4ji2o34jo";
+        int i = aa.hashCode();
+        String aaa = "fjiapfjfio32i4ji2o34jo";
+        int ia = aaa.hashCode();
+        System.out.println(i);
+        System.out.println(ia);
+
+    }
 }
