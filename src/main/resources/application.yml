@@ -20,21 +20,37 @@ spring:
     testOnReturn: false
     poolPreparedStatements: true
     maxOpenPreparedStatements: 20
+  thymeleaf:
+    suffix: .html
+    mode: HTML5
+    encoding: UTF-8
+    cache: false
+    #热部署文件，页面不产生缓存，及时更新
+  resources:
+    chain:
+      strategy:
+        content:
+          enabled: true
+          paths: /**
+
 
 #Logger Config
 logging:
   level:
     com.yangfei.singlefunction.mapper: debug
+
 server:
   port: 8082
   servlet:
     context-path: /single
+
 mybatis-plus:
   # 扫描 mapper.xml
   mapper-locations: classpath:/mapper/*Mapper.xml
   global-config:
     db-config:
       id-type: auto
+
 
 base:
   admin:

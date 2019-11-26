@@ -27,6 +27,12 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
+        <!-- websocket -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-websocket</artifactId>
+            <version>2.1.5.RELEASE</version>
+        </dependency>
         <!-- orm start -->
         <dependency>
             <groupId>mysql</groupId>
@@ -67,6 +73,13 @@
             <artifactId>lombok</artifactId>
             <scope>provided</scope>
         </dependency>
+
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>1.2.49</version>
+        </dependency>
+
         <!-- http request -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -84,7 +97,28 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
+            <plugin>
+                <groupId>com.spotify</groupId>
+                <artifactId>docker-maven-plugin</artifactId>
+                <version>0.4.13</version>
+                <configuration>
+                    <imageName>
+                        ${project.artifactId}/${project.groupId}:${project.version}
+                    </imageName>
+                    <dockerDirectory>${project.build.outputDirectory}</dockerDirectory>
+                    <resource>
+                        <directory>
+                            ${project.build.directory}
+                        </directory>
+                        <include>
+                            ${project.build.finalName}
+                        </include>
+                    </resource>
+                </configuration>
+            </plugin>
         </plugins>
+
     </build>
+
 
 </project>
