@@ -1,0 +1,34 @@
+[{
+  "metricName":"connectivity",
+  "tags":[{"key":"unit","value":""},
+    {"key":"monitorObject","value":"tomcat-jszwfw"},
+    {"key":"namespace","value":"Middleware"},
+    {"key":"ecureProxyServer","value":"tomcat-jszwfw"}],
+  "timestamp":"1564637100",
+  "value":""
+},
+  {
+    "metricName":"maxconn",
+    "tags":[{"key":"unit","value":""},
+      {"key":"monitorObject","value":"tomcat-jszwfw"},
+      {"key":"namespace","value":"Middleware"},
+      {"key":"ecureProxyServer","value":"tomcat-jszwfw"}],
+    "timestamp":"1564637100",
+    "value":""
+  },{
+  "metricName":"currconn",
+  "tags":[{"key":"unit","value":""},
+    {"key":"monitorObject","value":"tomcat-jszwfw"},
+    {"key":"namespace","value":"Middleware"},
+    {"key":"ecureProxyServer","value":"tomcat-jszwfw"}],
+  "timestamp":"1564637100",
+  "value":""
+},{
+  "metricName":"jvmusage",
+  "tags":[{"key":"unit","value":""},
+    {"key":"monitorObject","value":"tomcat-jszwfw"},
+    {"key":"namespace","value":"Middleware"},
+    {"key":"ecureProxyServer","value":"tomcat-jszwfw"}],
+  "timestamp":"1564637100",
+  "value":""
+}]
