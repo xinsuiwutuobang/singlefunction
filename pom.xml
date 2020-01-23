@@ -106,14 +106,14 @@
                         ${project.artifactId}/${project.groupId}:${project.version}
                     </imageName>
                     <dockerDirectory>${project.build.outputDirectory}</dockerDirectory>
-                    <resource>
+                   <!-- <resource>
                         <directory>
                             ${project.build.directory}
                         </directory>
                         <include>
                             ${project.build.finalName}
                         </include>
-                    </resource>
+                    </resource>-->
                 </configuration>
             </plugin>
         </plugins>
