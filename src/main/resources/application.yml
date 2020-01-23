@@ -51,6 +51,7 @@ server:
   port: 8087
   servlet:
     context-path: /single
+  max-http-header-size: 8KB
 
 mybatis-plus:
   # 扫描 mapper.xml
